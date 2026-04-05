@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  --font-display: var(--font-display-serif), serif;
+
+  --color-paper: #f6f1e8;
+  --color-canvas: #fbf8f3;
+  --color-panel: #fffdf9;
+  --color-line: #d9cfbf;
+  --color-ink: #1d1b18;
+  --color-muted: #5f584d;
+  --color-accent: #f59e0b;
+  --color-accent-deep: #b45309;
+  --color-olive: #7b7f5d;
+  --color-rust: #b46a47;
+  --color-stone-soft: #e7dfd3;
+
+  --radius-card: 1.75rem;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 24px 80px rgba(29, 27, 24, 0.08);
+}
+
+@layer base {
+  * {
+    @apply border-line;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-canvas font-sans text-ink antialiased;
+    background-image:
+      radial-gradient(circle at top left, rgba(245, 158, 11, 0.12), transparent 28%),
+      radial-gradient(circle at bottom right, rgba(180, 106, 71, 0.1), transparent 24%);
+  }
+
+  ::selection {
+    background: rgba(245, 158, 11, 0.24);
+    color: #1d1b18;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-[-0.03em] text-ink;
+  }
+
+  p {
+    @apply text-[1rem] leading-7 text-muted;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    @apply outline-none;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    @apply ring-2 ring-accent/50 ring-offset-2 ring-offset-canvas;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .section-space {
+    @apply py-20 sm:py-24 lg:py-28;
+  }
+
+  .eyebrow {
+    @apply text-xs font-medium uppercase tracking-[0.26em] text-muted;
+  }
+
+  .card-surface {
+    @apply rounded-[var(--radius-card)] border border-line/80 bg-panel shadow-[var(--shadow-card)];
+  }
+
+  .mdx {
+    @apply space-y-7;
+  }
+
+  .mdx h2 {
+    @apply pt-8 text-3xl leading-tight sm:text-4xl;
+  }
+
+  .mdx h3 {
+    @apply pt-4 text-2xl;
+  }
+
+  .mdx p,
+  .mdx li {
+    @apply text-lg leading-8 text-muted;
+  }
+
+  .mdx ul {
+    @apply list-disc space-y-3 pl-6;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
