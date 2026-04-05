@@ -8,6 +8,7 @@ Crestline Studio is a polished marketing site for a fictional branding agency. T
 
 ## Preview
 
+- Live site: https://crestline.amjadyahia.com/
 - GitHub: https://github.com/amjed-98/crestline-studio
 - Primary routes:
   - `/`
@@ -107,6 +108,10 @@ pnpm typecheck
 ```
 
 ## Deployment
+
+Live deployment:
+
+- https://crestline.amjadyahia.com/
 
 The project is set up for Vercel deployment.
 
